@@ -1,5 +1,10 @@
 # TASTEDEV Releases & Issues
 
+> **English** — Signed installers and public issue tracking for the TASTEDEV developer tools by GXSOFT
+> (SSH, FTP, archiver, file manager, DWG viewer, mail server, ETL). Product pages and docs: https://tastedev.net/en .
+> Source code is not public; every package ships with a `.sig` and `SHA256SUMS.txt` (see *Verifying a download* below).
+> Report problems in [Issues](https://github.com/whitecalvin/tastedev-releases/issues) — English or Korean is fine.
+
 TASTEDEV 제품의 **공식 배포 파일과 사용자 문제 신고를 한곳에서 관리하는 저장소**입니다.
 
 - **다운로드:** [Releases](https://github.com/whitecalvin/tastedev-releases/releases)
@@ -8,21 +13,35 @@ TASTEDEV 제품의 **공식 배포 파일과 사용자 문제 신고를 한곳�
 
 ## 지원 제품
 
-| 제품 | 분류 | 릴리스 태그 형식 | 개발 저장소 |
+| 제품 | 분류 | 릴리스 태그 형식 | 제품 페이지 |
 |---|---|---|---|
-| TASTECAD | 데스크톱 앱 | `cad-v<버전>` | [tastedev-cad](https://github.com/whitecalvin/tastedev-cad) |
-| TASTEFILES | 데스크톱 앱 | `files-v<버전>` | [tastedev-files](https://github.com/whitecalvin/tastedev-files) |
-| TASTEFTP | 데스크톱 앱 | `ftp-v<버전>` | [tastedev-ftp](https://github.com/whitecalvin/tastedev-ftp) |
-| TASTESSH | 데스크톱 앱 | `ssh-v<버전>` | [tastedev-ssh](https://github.com/whitecalvin/tastedev-ssh) |
-| TASTEZIP | 데스크톱 앱 | `zip-v<버전>` | [tastedev-zip](https://github.com/whitecalvin/tastedev-zip) |
-| TASTEETL | 웹·백엔드 | `etl-v<버전>` | [tastedev-etl](https://github.com/whitecalvin/tastedev-etl) |
-| TASTEMAIL | 웹·백엔드 | `mail-v<버전>` | [tastedev-mail](https://github.com/whitecalvin/tastedev-mail) |
+| TASTECAD | 데스크톱 앱 | `cad-v<버전>` | [tastedev.net/products/cad](https://tastedev.net/products/cad) |
+| TASTEFILES | 데스크톱 앱 | `files-v<버전>` | [tastedev.net/products/files](https://tastedev.net/products/files) |
+| TASTEFTP | 데스크톱 앱 | `ftp-v<버전>` | [tastedev.net/products/ftp](https://tastedev.net/products/ftp) |
+| TASTESSH | 데스크톱 앱 | `ssh-v<버전>` | [tastedev.net/products/ssh](https://tastedev.net/products/ssh) |
+| TASTEZIP | 데스크톱 앱 | `zip-v<버전>` | [tastedev.net/products/zip](https://tastedev.net/products/zip) |
+| TASTEETL | 웹·백엔드 | `etl-v<버전>` | [tastedev.net/products/etl](https://tastedev.net/products/etl) |
+| TASTEMAIL | 웹·백엔드 | `mail-v<버전>` | [tastedev.net/products/mail](https://tastedev.net/products/mail) |
 
 ## 다운로드 및 설치
 
 1. [릴리스 목록](https://github.com/whitecalvin/tastedev-releases/releases)에서 원하는 **제품명과 태그 접두사**를 확인합니다.
 2. 해당 제품 릴리스의 설명을 읽고 운영체제와 아키텍처에 맞는 파일을 **Assets**에서 선택합니다.
 3. 릴리스에 제공된 설치·업데이트 안내를 따릅니다. 체크섬이나 서명 검증 자료가 제공되면 함께 확인합니다.
+
+### 받은 파일 확인 (Verifying a download)
+
+릴리스마다 `SHA256SUMS.txt` 와 파일별 `.sig` 가 함께 올라갑니다. 내려받은 폴더에서:
+
+```bash
+sha256sum -c SHA256SUMS.txt --ignore-missing
+```
+
+```powershell
+Get-FileHash .	astessh_0.1.1_windows_x64.msi -Algorithm SHA256
+```
+
+서명 확인 방법은 https://tastedev.net/downloads 에 있습니다.
 
 여러 제품이 이 저장소를 함께 사용하므로 저장소 전체의 **Latest** 표시만으로 특정 제품의 최신 버전을 판단하지 마세요. 지원 운영체제와 설치 파일 형식은 제품·릴리스별로 확인해야 합니다.
 
@@ -64,7 +83,7 @@ TASTEDEV 제품의 **공식 배포 파일과 사용자 문제 신고를 한곳�
 |---|---|
 | **이 저장소의 Releases** | 제품별 배포 파일과 릴리스 안내 |
 | **이 저장소의 Issues** | 사용자가 신고한 문제·문의·기능 제안의 중앙 접수 |
-| **각 제품 개발 저장소** | 제품 소스, 단위·회귀 테스트, 구현 작업과 제품별 QA Issue |
+| **각 제품 개발 저장소(비공개)** | 제품 소스, 단위·회귀 테스트, 구현 작업과 제품별 QA Issue |
 | **별도 QA 환경** | QA 실행 기록, 상세 로그, 스크린샷과 테스트 상태 |
 
 사용자 신고를 개발 작업으로 연결할 때에는 관련 제품 저장소의 Issue 또는 변경 사항을 서로 참조해 처리 경과를 추적합니다. QA 기록 전체가 이 저장소에 자동으로 공개되는 것은 아닙니다.
