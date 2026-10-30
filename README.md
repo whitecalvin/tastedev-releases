@@ -23,6 +23,10 @@ TASTEDEV 제품의 **공식 배포 파일과 사용자 문제 신고를 한곳�
 | TASTEETL | 웹·백엔드 | `etl-v<버전>` | [tastedev.net/products/etl](https://tastedev.net/products/etl) |
 | TASTEMAIL | 웹·백엔드 | `mail-v<버전>` | [tastedev.net/products/mail](https://tastedev.net/products/mail) |
 
+## 측정 자료 (Benchmarks)
+
+- [TASTEFTP vs FileZilla — SFTP 전송 시간(2026-10-30)](benchmarks/tasteftp-sftp-2026-10-30/README.md): 같은 PC · 같은 서버 · 같은 파일 조건의 자체 측정, 원본 기록과 스크립트 포함.
+
 ## 다운로드 및 설치
 
 1. [릴리스 목록](https://github.com/whitecalvin/tastedev-releases/releases)에서 원하는 **제품명과 태그 접두사**를 확인합니다.
