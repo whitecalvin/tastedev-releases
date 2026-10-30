@@ -10,6 +10,9 @@
 > | Upload 64 KiB × 1,000 | 11.17 s | 34.73 s | ≈3.1× faster |
 > | Upload 1 GiB × 1 | 14.68 s | 16.77 s | **no clear difference** (run-to-run ranges overlap) |
 >
+> Environment: client Ryzen 7 8845HS / Windows 11 Pro / Realtek USB Ethernet 1 Gbps; server Ryzen 5 5600G / Ubuntu 26.04.1 / OpenSSH 10.2p1 / 1 Gbps;
+> same subnet, MTU 1500, ping ×50 on the same day: avg 7 ms (min 1, max 46).
+>
 > Limits: one network and one server; FTP/FTPS not measured; WinSCP/Cyberduck not measured; TASTEFTP was driven through its
 > command-line batch transfer (same transfer engine as the GUI), FileZilla through its GUI transfer queue. Details below (Korean).
 
@@ -36,8 +39,10 @@ GXSOFT 가 TASTEFTP 와 FileZilla Client 의 SFTP 전송 시간을 같은 조건
 
 | 항목 | 값 |
 | --- | --- |
-| 클라이언트 | Windows 11 Pro PC, 유선 1 Gbps |
-| 서버 | 같은 LAN 의 Ubuntu 서버, OpenSSH 10.2p1, 유선 1 Gbps |
+| 클라이언트 PC | AMD Ryzen 7 8845HS(16스레드) · 메모리 31 GiB · Windows 11 Pro(26300) · Realtek USB 이더넷 1 Gbps |
+| 서버 | AMD Ryzen 5 5600G(12스레드) · 메모리 58 GiB · Ubuntu 26.04.1 LTS(Linux 7.0) · OpenSSH 10.2p1 · 유선 1 Gbps · 저장소는 SATA SSD 위 ext4 이미지 |
+| 네트워크 | 같은 서브넷의 유선 LAN, 양쪽 1 Gbps(전이중), MTU 1500 |
+| 서버까지 왕복 시간 | 같은 날 ping 50회: 평균 7 ms, 최소 1 ms, 최대 46 ms |
 | 프로토콜 · 인증 | SFTP, 같은 ed25519 키, 두 앱 모두 같은 호스트 키를 미리 신뢰 |
 | TASTEFTP | 0.2.50 Windows 설치본(`tasteftp.exe` SHA-256 `4c14a525b6be1c3962b1f323466190063709359a7b2009337e0d4a1138634655`), `tasteftp cli batch --connections 2` |
 | FileZilla | 3.71.1 Windows(`filezilla.exe` SHA-256 `84ade0a797ffab4771eb4b0521b4404ec0be86e91824bbe0dafb69c099d74828`), GUI 전송 대기열, 동시 전송 2(기본값) |
